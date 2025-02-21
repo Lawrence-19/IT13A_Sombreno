@@ -18,10 +18,10 @@ public class Lab_act1_Arithmetics {
         System.out.print("Input first number:");
         int x= s.nextInt();
         
-        System.out.print("Input first number:");
+        System.out.print("Input Second number:");
         int y= s.nextInt();
         
-        System.out.print("Input first number:");
+        System.out.print("Input Third number:");
         int z= s.nextInt();
         
         
