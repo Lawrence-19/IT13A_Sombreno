@@ -6,11 +6,12 @@ package Prelim;
 
 /**
  *
- * @author User
- */
+ * @author ADMIN
+ */   
     import java.util.Scanner;
-
-public class Lab_Act2_JavaApp {
+            
+public class Lab_Act2_JavaApplication_SB {
+ 
     
     public static void main(String[] args) {
         
