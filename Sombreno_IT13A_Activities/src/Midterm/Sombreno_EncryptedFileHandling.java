@@ -14,15 +14,13 @@ public class Sombreno_EncryptedFileHandling {
         
         File myObj= new File("C:\\Users\\ADMIN\\Documents\\Input.txt");
         Scanner myReader = new Scanner(myObj);
-        int key = 7;
+        int key = 6;
                 
+         System.out.println("Encrpted Message:");
        while (myReader.hasNextLine()){
            String data = myReader.nextLine();
            String encrypt = encryptmessage(data,key);
-           System.out.println("Text : " + data);
-           System.out.println("Encrypt: " + encrypt);
-           System.out.println();
-        
+           System.out.println(encrypt);
        }
        myReader.close();
     }
