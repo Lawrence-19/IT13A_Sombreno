@@ -5,7 +5,6 @@
 package JavaProject;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,12 +15,12 @@ public class RestaurantOrderingSystem {
     
     static Scanner s=  new Scanner(System.in);
     static final String FileName = "C:\\Users\\ADMIN\\Documents\\credentials.txt";
-    static final int Shift = 3;
+    static final int Shift = 1;
     
     public static void main(String[] args) throws IOException {
         
         System.out.println("================================================================");
-        System.out.println("          Welcome to the Restaurant ordering System!            ");
+        System.out.println("      𓌉◯𓇋 Welcome to the Restaurant ordering System!𓌉◯𓇋       ");
         System.out.println("================================================================");
      
         
@@ -33,18 +32,18 @@ public class RestaurantOrderingSystem {
         
         if(choice == 1){           
             CreateAcc();
-       
         }else if(choice == 2){
-            Login();
-       
+            Login(); 
         }else{
-            System.out.println("Login Failed");
+            System.out.println("Invalid Choice");
         }      
     }
      
    public static void CreateAcc(){
        //Create Account for the Customer//
-       System.out.println("Create New Account");
+       System.out.println("================================================================");
+       System.out.println("                    🔒  Create New Account 🔒                    ");
+       System.out.println("================================================================");
        
        //Ask the customer username and password//
        System.out.print("Enter Username: ");
@@ -53,62 +52,85 @@ public class RestaurantOrderingSystem {
        System.out.print("Enter New password: ");
        String NewP = s.nextLine();
        
-       String encryptPass = encryptC(NewP,Shift);
+       String encryptPass = encryptCaesar(NewP,Shift);
+      
        
        try{
-           FileWriter Ca = new FileWriter(FileName);
-           Ca.write(NewU + ", " + encryptPass + "/n");
+           FileWriter Ca = new FileWriter(FileName, true);
+           Ca.write(NewU + ", " + encryptPass + "\n");
            Ca.close();
-           System.out.println("account created Successfully");
+
+           System.out.println("Account Created Successfully");
+           Login();
            
        }catch (IOException e) {
            System.out.println("Error Saving Account");
        }
    } 
    
-   public static String encryptC(String message, int key){
-       char[] chars= message.toCharArray();
-       for(int i=0; i < chars.length; i++){
-           chars[i] += key;
-       }
-        return new String(chars);   
-   }
-   
-   public static boolean validate(String username, String password) throws FileNotFoundException, IOException{
-      try{
-       BufferedReader read = new BufferedReader(new FileReader(FileName));
-       String line;
-       
-       while((line = read.readLine()) != null) {
-           String[] credentials = line.split(": ");
-           
-           if(credentials.length == 2 && credentials[0].equals(username) && credentials[1].equals(password));
-           read.close();
-    
-       }
+   public static String encryptCaesar(String text, int shift) {
+        StringBuilder result = new StringBuilder();
 
-       return true;
-       
-      }catch (IOException e) {
-          System.out.println("An error occured");
-      }
+        for (char ch : text.toCharArray()) {
+            if (Character.isLetter(ch)) {
+                char base = Character.isUpperCase(ch) ? 'A' : 'a';
+                result.append((char) ((ch - base + shift) % 26 + base));
+            } else if (Character.isDigit(ch)) {
+                result.append((char) ((ch - '0' + shift) % 10 + '0'));
+            } else {
+                result.append(ch); 
+            }
+        }
+
+        return result.toString();
+    }
+   
+       public static boolean validate(String OldU,String OldP) {
+        String encryptedInputPassword = encryptCaesar(OldP, Shift);
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(FileName))) {
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                if(parts.length == 2){
+                    String fileUsername = parts[0].trim();
+                    String filePassword = parts[1].trim();
+                    
+                    if(fileUsername.equals(OldU) && filePassword.equals(encryptedInputPassword)){
+                        return true;
+                    }
+                
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error reading file: ");
+        }
         return false;
-
-   }
+    }
    
+       
    public static void Login() throws IOException{
+       
+       System.out.println("================================================================");
+       System.out.println("                       🔐 Login Account                          ");
+       System.out.println("================================================================");
        
        System.out.print("Enter Username: ");
        String OldU = s.nextLine();
        
-       System.out.print("Enter New password: ");
+       System.out.print("Enter password: ");
        String OldP = s.nextLine();
        
-       if(validate(OldU,OldP)){
-           System.out.println("Login Successfully");
+       
+       if (validate( OldU, OldP)) {
+           
+           System.out.println(" 🔓 Login Successfully");
+           System.out.println("Welcome " + OldU);
            displayMenu();
        }else{
-           System.out.println("Wrong Username of Password");
+           System.out.println("❌ Wrong Username or Password");
+           Login();
        }
    }
    public static void displayMenu() {
@@ -117,47 +139,76 @@ public class RestaurantOrderingSystem {
        int quantity;
        double totalPrice = 0;
        
+        
+        int pizzaQty = 0;
+        int burgerQty = 0;
+        int friesQty = 0;
+       
        do{
-           System.out.println("\n ========= Welcome to Java Diner=========");
-           System.out.println("1. Pizza - ₱120");
-           System.out.println("2. Burger - ₱50");
-           System.out.println("3. Fries - ₱50");
-           System.out.println("4. Exit");
+           System.out.println("----------------------------------------------------------------");
+           System.out.println("                         Java Menu                              ");
            
-           System.out.println("Choose an Item: ");
+           
+           System.out.println("[1] Pizza - ₱ 120");
+           System.out.println("[2] Burger - ₱ 50");
+           System.out.println("[3] Fries - ₱ 50");
+           System.out.println("[4] Exit");
+           System.out.println("--------------------------------------");
+           System.out.print("Choose an Item: ");
+           while(!s.hasNextInt()){
+               System.out.println("Please choose and Item");
+           }
            choice = s.nextInt();
+           s.nextLine();
            
-           System.out.println("Enter quantity: ");
-           quantity = s.nextInt();
-           
-           
+
            switch(choice) {
-               case 1:
-                   System.out.println("Pizza");
-                   totalPrice += 120;
-                   break;
-               case 2:
-                   System.out.println("Burger");
-                   totalPrice += 50;
-                   break;
-               case 3:
-                   System.out.println("Fries");
-                   totalPrice += 50;
-                   break;
-               case 4:
+               case 1 -> {
+                   System.out.print("Enter quantity: ");
+                   quantity = s.nextInt();
+                   pizzaQty += quantity;                  
+                   totalPrice += 120 * quantity;
+                   System.out.println("You ordered Pizza x" + quantity);
+               }
+               case 2 -> {
+                   System.out.print("Enter quantity: ");
+                   quantity = s.nextInt();
+                   burgerQty += quantity;
+                   totalPrice += 50 * quantity;
+                   System.out.println("You ordered Burger x" + quantity);
+               }
+               case 3 -> {
+                   System.out.print("Enter quantity: ");
+                   quantity = s.nextInt();
+                   friesQty += quantity;
+                   totalPrice += 50 * quantity;
+                   System.out.println("You ordered Fries x" + quantity);
+               }
+               case 4 -> 
                    System.out.println("Thank you for Dining with us!");
-                   break;
-               default:
-                   System.out.println("Invalid choice! Please select a valid option");
+               default -> System.out.println("Invalid choice! Please select a valid option");
            
            }
-           
+             
        }while (choice !=4);
        
-       if (totalPrice > 0){
-           System.out.println("your total bill: " + totalPrice);
+       System.out.println();
+       System.out.println("---------------------- 📜 Order Summary ------------------------");
+       
+       if (pizzaQty > 0){
+           System.out.println("Pizza x" + pizzaQty + " - ₱" + (pizzaQty * 120));                       
+       }
+       if (burgerQty > 0){
+           System.out.println("Burger x" + burgerQty + " - ₱" + (burgerQty * 50));                      
+       }
+       if (friesQty > 0){
+           System.out.println("Fries x" + friesQty + " - ₱" + (friesQty * 50));                      
        }
        
+
+       System.out.println("----------------------------");
+       System.out.println("Total: ₱" + totalPrice);
+       
    }
-  
+
 }
