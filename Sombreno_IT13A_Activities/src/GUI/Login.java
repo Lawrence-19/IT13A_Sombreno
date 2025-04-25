@@ -8,6 +8,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
@@ -18,6 +19,8 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         setBounds(600, 300, 400, 250);
         setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
         
     }
 
