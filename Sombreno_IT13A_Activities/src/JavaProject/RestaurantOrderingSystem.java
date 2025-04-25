@@ -15,12 +15,12 @@ public class RestaurantOrderingSystem {
     
     static Scanner s=  new Scanner(System.in);
     static final String FileName = "C:\\Users\\ADMIN\\Documents\\credentials.txt";
-    static final int Shift = 1;
+    static final int Shift = 3;
     
     public static void main(String[] args) throws IOException {
         
         System.out.println("================================================================");
-        System.out.println("      𓌉◯𓇋 Welcome to the Restaurant ordering System!𓌉◯𓇋       ");
+        System.out.println("     ***** Welcome to the Restaurant ordering System! *****     ");
         System.out.println("================================================================");
      
         
@@ -42,7 +42,7 @@ public class RestaurantOrderingSystem {
    public static void CreateAcc(){
        //Create Account for the Customer//
        System.out.println("================================================================");
-       System.out.println("                    🔒  Create New Account 🔒                    ");
+       System.out.println("           **********  Create New Account  **********           ");
        System.out.println("================================================================");
        
        //Ask the customer username and password//
@@ -53,8 +53,7 @@ public class RestaurantOrderingSystem {
        String NewP = s.nextLine();
        
        String encryptPass = encryptCaesar(NewP,Shift);
-      
-       
+             
        try{
            FileWriter Ca = new FileWriter(FileName, true);
            Ca.write(NewU + ", " + encryptPass + "\n");
@@ -64,7 +63,7 @@ public class RestaurantOrderingSystem {
            Login();
            
        }catch (IOException e) {
-           System.out.println("Error Saving Account");
+           System.out.println("X Error Saving Account");
        }
    } 
    
@@ -113,24 +112,30 @@ public class RestaurantOrderingSystem {
    public static void Login() throws IOException{
        
        System.out.println("================================================================");
-       System.out.println("                       🔐 Login Account                          ");
+       System.out.println("               ********** Login Account  **********             ");
        System.out.println("================================================================");
        
+       boolean success = false;
+       int attempts = 0;
+       
+       while(!success && attempts < 3){
        System.out.print("Enter Username: ");
        String OldU = s.nextLine();
-       
-       System.out.print("Enter password: ");
+              System.out.print("Enter password: ");
        String OldP = s.nextLine();
        
-       
        if (validate( OldU, OldP)) {
-           
-           System.out.println(" 🔓 Login Successfully");
-           System.out.println("Welcome " + OldU);
+           System.out.println(" Login Successfully");
+           System.out.println("Welcome " + OldU + "!");
            displayMenu();
+           success = true;
        }else{
-           System.out.println("❌ Wrong Username or Password");
-           Login();
+           System.out.println("X Wrong Username or Password");
+           attempts++;
+       }
+       }
+       if (!success) {
+           System.out.println("Too many failed attempts. Try again later");
        }
    }
    public static void displayMenu() {
@@ -145,23 +150,21 @@ public class RestaurantOrderingSystem {
         int friesQty = 0;
        
        do{
-           System.out.println("----------------------------------------------------------------");
+           System.out.println("================================================================");
            System.out.println("                         Java Menu                              ");
-           
-           
-           System.out.println("[1] Pizza - ₱ 120");
-           System.out.println("[2] Burger - ₱ 50");
-           System.out.println("[3] Fries - ₱ 50");
+           System.out.println("[1] Pizza - Php 120");
+           System.out.println("[2] Burger - Php 50");
+           System.out.println("[3] Fries - Php 50");
            System.out.println("[4] Exit");
-           System.out.println("--------------------------------------");
+           System.out.println("----------------------------------------------------------------");
            System.out.print("Choose an Item: ");
+           
            while(!s.hasNextInt()){
                System.out.println("Please choose and Item");
            }
            choice = s.nextInt();
            s.nextLine();
            
-
            switch(choice) {
                case 1 -> {
                    System.out.print("Enter quantity: ");
@@ -193,22 +196,22 @@ public class RestaurantOrderingSystem {
        }while (choice !=4);
        
        System.out.println();
-       System.out.println("---------------------- 📜 Order Summary ------------------------");
+       System.out.println("-------------------- * Order Summary * -------------------------");
        
        if (pizzaQty > 0){
-           System.out.println("Pizza x" + pizzaQty + " - ₱" + (pizzaQty * 120));                       
+           System.out.println("Pizza x" + pizzaQty + " - Php " + (pizzaQty * 120));                       
        }
        if (burgerQty > 0){
-           System.out.println("Burger x" + burgerQty + " - ₱" + (burgerQty * 50));                      
+           System.out.println("Burger x" + burgerQty + " - Php " + (burgerQty * 50));                      
        }
        if (friesQty > 0){
-           System.out.println("Fries x" + friesQty + " - ₱" + (friesQty * 50));                      
+           System.out.println("Fries x" + friesQty + " - Php " + (friesQty * 50));                      
        }
        
 
        System.out.println("----------------------------");
-       System.out.println("Total: ₱" + totalPrice);
-       
+       System.out.println("Total: Php " + totalPrice);
+       System.out.println("----------------------------------------------------------------");
    }
 
 }
