@@ -29,8 +29,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelUsername = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextUsername = new javax.swing.JTextArea();
+        jTextUsername = new javax.swing.JTextField();
         jLabelPassword = new javax.swing.JLabel();
         jPasswordField = new javax.swing.JPasswordField();
         jButtonLogin = new javax.swing.JButton();
@@ -39,19 +38,32 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(3, 2));
 
-        jLabelUsername.setText("Username:");
+        jLabelUsername.setBackground(new java.awt.Color(153, 255, 255));
+        jLabelUsername.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelUsername.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelUsername.setText("          Username:");
         getContentPane().add(jLabelUsername);
 
-        jTextUsername.setColumns(20);
-        jTextUsername.setRows(5);
-        jScrollPane1.setViewportView(jTextUsername);
+        jTextUsername.setBackground(new java.awt.Color(153, 255, 255));
+        jTextUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextUsernameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextUsername);
 
-        getContentPane().add(jScrollPane1);
-
-        jLabelPassword.setText("Password:");
+        jLabelPassword.setBackground(new java.awt.Color(153, 255, 255));
+        jLabelPassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelPassword.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelPassword.setText("          Password:");
         getContentPane().add(jLabelPassword);
+
+        jPasswordField.setBackground(new java.awt.Color(153, 255, 255));
         getContentPane().add(jPasswordField);
 
+        jButtonLogin.setBackground(new java.awt.Color(102, 204, 255));
+        jButtonLogin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButtonLogin.setForeground(new java.awt.Color(0, 0, 0));
         jButtonLogin.setText("Login");
         jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,6 +72,9 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonLogin);
 
+        jButtonCancel.setBackground(new java.awt.Color(102, 204, 255));
+        jButtonCancel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButtonCancel.setForeground(new java.awt.Color(0, 0, 0));
         jButtonCancel.setText("Cancel");
         jButtonCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,6 +115,10 @@ public class Login extends javax.swing.JFrame {
         jTextUsername.setText("");
         jPasswordField.setText("");
     }//GEN-LAST:event_jButtonCancelActionPerformed
+
+    private void jTextUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextUsernameActionPerformed
    
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
@@ -113,8 +132,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelPassword;
     private javax.swing.JLabel jLabelUsername;
     private javax.swing.JPasswordField jPasswordField;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextUsername;
+    private javax.swing.JTextField jTextUsername;
     // End of variables declaration//GEN-END:variables
 
    
