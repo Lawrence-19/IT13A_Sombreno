@@ -214,7 +214,7 @@ static final int Shift = 3;
         
         //Ma saved ang gibutang nga credential ni user
         try{
-           FileWriter credits = new java.io.FileWriter("C:\\Users\\ADMIN\\Documents\\Input.txt", true);
+           FileWriter credits = new java.io.FileWriter("C:\\Users\\ADMIN\\Documents\\PostnHire\\Input.txt", true);
            credits.write(username + ", " + encryptPass + "\n");
            credits.close();
            
@@ -240,20 +240,12 @@ static final int Shift = 3;
             jnewPassword.setEchoChar('*');//ma tago ang password
         }
     }//GEN-LAST:event_jCheckshowpassActionPerformed
-    private String encryptCaesar(String text, int shift) {
-        StringBuilder result = new StringBuilder();
-
-        for (char ch : text.toCharArray()) {
-            if (Character.isLetter(ch)) {
-                char base = Character.isUpperCase(ch) ? 'A' : 'a';
-                result.append((char) ((ch - base + shift) % 26 + base));
-            } else if (Character.isDigit(ch)) {
-                result.append((char) ((ch - '0' + shift) % 10 + '0'));
-            } else {
-                result.append(ch); 
-            }
+    private String encryptCaesar(String message, int key) {
+        char[] chars = message.toCharArray();
+        for (int i = 0; i < chars.length; i++){
+            chars[i] += key;
         }
-    return result.toString();
+        return new String(chars);   
     }
         
     /**

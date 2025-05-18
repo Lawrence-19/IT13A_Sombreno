@@ -42,6 +42,8 @@ public class Login extends javax.swing.JFrame {
         Main.setBackground(new java.awt.Color(255, 255, 255));
 
         Left.setBackground(new java.awt.Color(102, 102, 255));
+        Left.setAlignmentX(0.0F);
+        Left.setPreferredSize(new java.awt.Dimension(277, 281));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -72,28 +74,28 @@ public class Login extends javax.swing.JFrame {
         LeftLayout.setHorizontalGroup(
             LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LeftLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jLabel2)
+                .addContainerGap(54, Short.MAX_VALUE))
+            .addGroup(LeftLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LeftLayout.createSequentialGroup()
                 .addGap(86, 86, 86)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(LeftLayout.createSequentialGroup()
-                .addGap(0, 39, Short.MAX_VALUE)
-                .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(LeftLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jLabel2)))
-                .addContainerGap(44, Short.MAX_VALUE))
         );
         LeftLayout.setVerticalGroup(
             LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LeftLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addComponent(jLabel2)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(219, 219, 219)
                 .addComponent(jLabel1)
-                .addGap(143, 143, 143))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Right.setBackground(new java.awt.Color(255, 255, 255));
@@ -179,7 +181,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jButtonlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButtontosignin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout MainLayout = new javax.swing.GroupLayout(Main);
@@ -193,7 +195,7 @@ public class Login extends javax.swing.JFrame {
         );
         MainLayout.setVerticalGroup(
             MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Left, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Left, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
             .addComponent(Right, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -228,23 +230,25 @@ public class Login extends javax.swing.JFrame {
         
         }
         
-        String encryptPass = encrypt(password,Shift);
+        String encryptPassword = password;
         boolean usernameExist = false;
         boolean passmatched = false;
 
         try{
-            BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\ADMIN\\Documents\\Input.txt"));
+            BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\ADMIN\\Documents\\PostnHire\\Input.txt"));
             String line;
             
             while ((line = read.readLine()) != null){
                 String[] parts = line.split(",");
                 if (parts.length == 2){
                     String dataUsername = parts[0].trim();
-                    String datapassword = parts[1].trim();
+                    String encryptedPassword = parts[1].trim();
                     
                     if (username.equals(dataUsername)){
                         usernameExist = true;
-                        if(encryptPass.equals(datapassword)){
+                        String decryptedPass = decrypt(encryptedPassword, Shift);
+                        
+                        if(encryptPassword.equals(decryptedPass)){
                             passmatched = true;
                             break;
                             }
@@ -268,24 +272,7 @@ public class Login extends javax.swing.JFrame {
                 dash.setVisible(true);
                 dispose();
             }
-            
-//          if(passmatched){
-//              JOptionPane.showMessageDialog(this, "login Successful", "Welcome", JOptionPane.INFORMATION_MESSAGE);
-//              
-//              //Mapadulong sa Dashboard nga Jframe
-//              Dashboard dash = new Dashboard();
-//              dash.setVisible(true);
-//              dispose();
-//              
-//          }else if(usernameExist){
-//              JOptionPane.showMessageDialog(this, "Incorrect password", "Login Failed", JOptionPane.ERROR_MESSAGE);
-//              jPassword.setText("");//Mahawan ang password feild
-//          }else{
-//              JOptionPane.showMessageDialog(this, "username not found", "loginFailed", JOptionPane.ERROR_MESSAGE);
-//              jTextusername.setText("");//Mahawan ang username textfeild
-//              jPassword.setText("");//Mahawan ang password feild
-//          }
-            
+                        
         }catch(IOException e){
          JOptionPane.showMessageDialog(this, "Error reading eser file", "Error", JOptionPane.ERROR_MESSAGE);
            }
@@ -300,20 +287,13 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jCheckshowpassActionPerformed
     
-    private String encrypt(String text, int shift) {
-        StringBuilder result = new StringBuilder();
-
-        for (char ch : text.toCharArray()) {
-            if (Character.isLetter(ch)) {
-                char base = Character.isUpperCase(ch) ? 'A' : 'a';
-                result.append((char) ((ch - base + shift) % 26 + base));
-            } else if (Character.isDigit(ch)) {
-                result.append((char) ((ch - '0' + shift) % 10 + '0'));
-            } else {
-                result.append(ch); 
-            }
+     
+    private String decrypt(String message, int key) {
+        char[] chars = message.toCharArray();
+        for (int i = 0; i < chars.length; i++){
+            chars[i] -= key;
         }
-    return result.toString();
+        return new String(chars);   
     }
     
 
