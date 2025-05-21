@@ -39,16 +39,16 @@ public class ViewJobs extends javax.swing.JInternalFrame {
 
         setBorder(null);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(203, 178, 107));
 
         jPostJobs.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jPostJobs.setForeground(new java.awt.Color(204, 255, 255));
+        jPostJobs.setForeground(new java.awt.Color(59, 59, 156));
         jPostJobs.setText("POSTED JOBS");
 
         jScrollPane.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane.setForeground(new java.awt.Color(0, 0, 0));
 
-        TjobArea.setBackground(new java.awt.Color(153, 255, 255));
+        TjobArea.setBackground(new java.awt.Color(204, 204, 255));
         TjobArea.setColumns(20);
         TjobArea.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         TjobArea.setForeground(new java.awt.Color(0, 0, 0));
@@ -61,21 +61,21 @@ public class ViewJobs extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane)
+                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(142, 142, 142)
+                .addGap(132, 132, 132)
                 .addComponent(jPostJobs)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jPostJobs)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(17, 17, 17))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -107,6 +107,7 @@ public class ViewJobs extends javax.swing.JInternalFrame {
             String line;
             while((line = read.readLine()) != null){
                 content.append(line).append("\n");
+               
             }
             TjobArea.setText(content.toString());
         }catch (IOException e){

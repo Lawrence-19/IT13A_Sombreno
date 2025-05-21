@@ -18,6 +18,7 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 public class ApplyJob extends javax.swing.JInternalFrame {
 
 private String selectedJob;
+private String Tjoblist;
     
     public ApplyJob() {
         initComponents();
@@ -26,13 +27,13 @@ private String selectedJob;
         ui.setNorthPane(null);
        
         DefaultListModel<String> jobListModel = new DefaultListModel<>();
-        Tjoblist.setModel(jobListModel);
+//        Tjoblist.setModel(jobListModel);
         loadJobs(jobListModel);
         
         if(selectedJob != null && !selectedJob.isEmpty()){
             for(int i = 0; i < jobListModel.size(); i++){
                 if(jobListModel.get(i).equals(selectedJob)){
-                Tjoblist.setSelectedIndex(i);
+//                Tjoblist.setSelectedIndex(i);
                 break;
                 }
             }
@@ -74,7 +75,7 @@ private String selectedJob;
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
         LjobApp.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        LjobApp.setForeground(new java.awt.Color(102, 102, 255));
+        LjobApp.setForeground(new java.awt.Color(59, 59, 156));
         LjobApp.setText("JOB APPLICATION");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

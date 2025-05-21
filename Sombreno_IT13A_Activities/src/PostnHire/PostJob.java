@@ -35,15 +35,15 @@ public class PostJob extends javax.swing.JInternalFrame {
         setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         setPreferredSize(new java.awt.Dimension(532, 500));
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(203, 178, 107));
         jPanel2.setPreferredSize(new java.awt.Dimension(532, 500));
 
         Ljobtitle.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        Ljobtitle.setForeground(new java.awt.Color(102, 102, 255));
+        Ljobtitle.setForeground(new java.awt.Color(59, 59, 156));
         Ljobtitle.setText("Job Description:");
 
         Ljobtitle1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        Ljobtitle1.setForeground(new java.awt.Color(102, 102, 255));
+        Ljobtitle1.setForeground(new java.awt.Color(59, 59, 156));
         Ljobtitle1.setText("Job Title:");
 
         Tjobdescription.setBackground(new java.awt.Color(255, 255, 255));
@@ -56,7 +56,7 @@ public class PostJob extends javax.swing.JInternalFrame {
         Tjobtitle.setForeground(new java.awt.Color(0, 0, 0));
         Tjobtitle.setSelectedTextColor(new java.awt.Color(0, 0, 0));
 
-        BpostJob.setBackground(new java.awt.Color(102, 102, 255));
+        BpostJob.setBackground(new java.awt.Color(59, 59, 156));
         BpostJob.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         BpostJob.setForeground(new java.awt.Color(204, 255, 255));
         BpostJob.setText("Post Job");
@@ -67,7 +67,7 @@ public class PostJob extends javax.swing.JInternalFrame {
         });
 
         JLjobtitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        JLjobtitle.setForeground(new java.awt.Color(102, 102, 255));
+        JLjobtitle.setForeground(new java.awt.Color(59, 59, 156));
         JLjobtitle.setText("CREATE JOB");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -81,9 +81,11 @@ public class PostJob extends javax.swing.JInternalFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Ljobtitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Ljobtitle, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Tjobtitle, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(Tjobtitle, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Tjobdescription)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(135, 135, 135)
@@ -99,7 +101,7 @@ public class PostJob extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addComponent(JLjobtitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Ljobtitle1)
                     .addComponent(Tjobtitle, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -120,7 +122,7 @@ public class PostJob extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
         );
 
         pack();
