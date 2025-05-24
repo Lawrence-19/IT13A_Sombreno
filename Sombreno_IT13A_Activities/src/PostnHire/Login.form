@@ -30,7 +30,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="Main" alignment="0" pref="700" max="32767" attributes="0"/>
+          <Component id="Main" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -52,16 +52,15 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="Left" min="-2" pref="276" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="Right" min="-2" pref="427" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <Component id="Right" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="Left" pref="500" max="32767" attributes="0"/>
-              <Component id="Right" alignment="0" pref="500" max="32767" attributes="0"/>
+              <Component id="Right" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -156,7 +155,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="30" y="480" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="20" y="460" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -195,13 +194,13 @@
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/PostnHire/PostNHire-Logolang 300.png"/>
+                  <Image iconType="2" name="C:\Users\ADMIN\Downloads\POSTnHire logo.jpg"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel2"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="40" y="10" width="220" height="-1"/>
+                  <AbsoluteConstraints x="30" y="10" width="220" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -214,8 +213,48 @@
             </Property>
           </Properties>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-            <Property name="useNullLayout" type="boolean" value="false"/>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelusername" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextusername" min="-2" pref="319" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="jCheckshowpass" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabelpassword" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jPassword" min="-2" pref="319" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jButtonlogin" alignment="1" min="-2" pref="319" max="-2" attributes="0"/>
+                              <Component id="jButtontosignin" alignment="1" min="-2" pref="319" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
+                      <Component id="jLabelusername" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
+                      <Component id="jTextusername" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jLabelpassword" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPassword" min="-2" pref="35" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jCheckshowpass" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="jButtonlogin" min="-2" pref="49" max="-2" attributes="0"/>
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="jButtontosignin" min="-2" pref="36" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabelusername">
@@ -228,16 +267,11 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Username"/>
               </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="40" y="93" width="-1" height="-1"/>
-                </Constraint>
-              </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextusername">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="ff" green="ff" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="12" style="0"/>
@@ -249,11 +283,6 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
               </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="40" y="133" width="319" height="32"/>
-                </Constraint>
-              </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelpassword">
               <Properties>
@@ -265,16 +294,11 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Password"/>
               </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="40" y="196" width="-1" height="-1"/>
-                </Constraint>
-              </Constraints>
             </Component>
             <Component class="javax.swing.JPasswordField" name="jPassword">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="ff" green="ff" red="cc" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -283,11 +307,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jPasswordActionPerformed"/>
               </Events>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="40" y="224" width="319" height="35"/>
-                </Constraint>
-              </Constraints>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonlogin">
               <Properties>
@@ -306,11 +325,6 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonloginMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonloginActionPerformed"/>
               </Events>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="40" y="343" width="319" height="49"/>
-                </Constraint>
-              </Constraints>
             </Component>
             <Component class="javax.swing.JButton" name="jButtontosignin">
               <Properties>
@@ -331,11 +345,6 @@
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtontosigninMouseClicked"/>
               </Events>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="40" y="404" width="319" height="36"/>
-                </Constraint>
-              </Constraints>
             </Component>
             <Component class="javax.swing.JCheckBox" name="jCheckshowpass">
               <Properties>
@@ -353,11 +362,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckshowpassActionPerformed"/>
               </Events>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="254" y="277" width="-1" height="-1"/>
-                </Constraint>
-              </Constraints>
             </Component>
           </SubComponents>
         </Container>

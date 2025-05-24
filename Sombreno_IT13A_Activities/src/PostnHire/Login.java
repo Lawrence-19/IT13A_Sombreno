@@ -12,7 +12,7 @@ public class Login extends javax.swing.JFrame {
     
     public Login() {
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(null); // para mag pop up ni nga jframe sa tunga kung I run
     }
 
 
@@ -82,7 +82,7 @@ public class Login extends javax.swing.JFrame {
 
         Lcopyright.setForeground(new java.awt.Color(153, 255, 255));
         Lcopyright.setText(" © 2025 POSTnHIRE - All Rights Reserved");
-        Left.add(Lcopyright, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
+        Left.add(Lcopyright, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
 
         Lquote2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Lquote2.setForeground(new java.awt.Color(153, 255, 255));
@@ -94,37 +94,32 @@ public class Login extends javax.swing.JFrame {
         Lquote1.setText("“Post Jobs. Hire Talent. Fast.”");
         Left.add(Lquote1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PostnHire/PostNHire-Logolang 300.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ADMIN\\Downloads\\POSTnHire logo.jpg")); // NOI18N
         jLabel2.setText("jLabel2");
-        Left.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 220, -1));
+        Left.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 220, -1));
 
         Right.setBackground(new java.awt.Color(203, 178, 107));
-        Right.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelusername.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelusername.setForeground(new java.awt.Color(59, 59, 156));
         jLabelusername.setText("Username");
-        Right.add(jLabelusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 93, -1, -1));
 
-        jTextusername.setBackground(new java.awt.Color(255, 255, 255));
+        jTextusername.setBackground(new java.awt.Color(204, 255, 255));
         jTextusername.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextusername.setForeground(new java.awt.Color(0, 0, 0));
         jTextusername.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        Right.add(jTextusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 133, 319, 32));
 
         jLabelpassword.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelpassword.setForeground(new java.awt.Color(59, 59, 156));
         jLabelpassword.setText("Password");
-        Right.add(jLabelpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 196, -1, -1));
 
-        jPassword.setBackground(new java.awt.Color(255, 255, 255));
+        jPassword.setBackground(new java.awt.Color(204, 255, 255));
         jPassword.setForeground(new java.awt.Color(0, 0, 0));
         jPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordActionPerformed(evt);
             }
         });
-        Right.add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 224, 319, 35));
 
         jButtonlogin.setBackground(new java.awt.Color(59, 59, 156));
         jButtonlogin.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -140,7 +135,6 @@ public class Login extends javax.swing.JFrame {
                 jButtonloginActionPerformed(evt);
             }
         });
-        Right.add(jButtonlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 343, 319, 49));
 
         jButtontosignin.setBackground(new java.awt.Color(203, 178, 107));
         jButtontosignin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -152,7 +146,6 @@ public class Login extends javax.swing.JFrame {
                 jButtontosigninMouseClicked(evt);
             }
         });
-        Right.add(jButtontosignin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 404, 319, 36));
 
         jCheckshowpass.setBackground(new java.awt.Color(203, 178, 107));
         jCheckshowpass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -163,7 +156,43 @@ public class Login extends javax.swing.JFrame {
                 jCheckshowpassActionPerformed(evt);
             }
         });
-        Right.add(jCheckshowpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 277, -1, -1));
+
+        javax.swing.GroupLayout RightLayout = new javax.swing.GroupLayout(Right);
+        Right.setLayout(RightLayout);
+        RightLayout.setHorizontalGroup(
+            RightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RightLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addGroup(RightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelusername)
+                    .addComponent(jTextusername, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(RightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jCheckshowpass)
+                        .addGroup(RightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelpassword)
+                            .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButtonlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtontosignin, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(105, 105, 105))
+        );
+        RightLayout.setVerticalGroup(
+            RightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RightLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(jLabelusername)
+                .addGap(8, 8, 8)
+                .addComponent(jTextusername, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jLabelpassword)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jCheckshowpass)
+                .addGap(51, 51, 51)
+                .addComponent(jButtonlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jButtontosignin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout MainLayout = new javax.swing.GroupLayout(Main);
         Main.setLayout(MainLayout);
@@ -171,21 +200,20 @@ public class Login extends javax.swing.JFrame {
             MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainLayout.createSequentialGroup()
                 .addComponent(Left, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Right, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addGap(0, 0, 0)
+                .addComponent(Right, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         MainLayout.setVerticalGroup(
             MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Left, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
-            .addComponent(Right, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(Right, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Main, javax.swing.GroupLayout.PREFERRED_SIZE, 700, Short.MAX_VALUE)
+            .addComponent(Main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,7 +224,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtontosigninMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtontosigninMouseClicked
-        // TODO add your handling code here:
+        //gitawag si Signup nga jframe
         Signup sign = new Signup();
         sign.setVisible(true);
         dispose();
@@ -206,10 +234,10 @@ public class Login extends javax.swing.JFrame {
        String username = jTextusername.getText();
        String password = new String(jPassword.getPassword());
        
-       //if ever nga natuplok ni user ang button unya walay sulod ang username ug password//
+       //if ever nga natuplok ni user ang button unya walay sulod ang username ug password
         if (username.isEmpty() || password.isEmpty()){
             JOptionPane.showMessageDialog(this, "Please input Your Username and Password", "Error", JOptionPane.ERROR_MESSAGE);
-        
+            return; //maputol ang execution kung walay sulod ang username ug password
         }
         
         String encryptPassword = password;
@@ -226,10 +254,14 @@ public class Login extends javax.swing.JFrame {
                     String dataUsername = parts[0].trim();
                     String encryptedPassword = parts[1].trim();
                     
+                    //kung ang gi input ni username nakita sa datausername
                     if (username.equals(dataUsername)){
                         usernameExist = true;
+                        
+                        //gi call nato ang decryptedpass nga method
                         String decryptedPass = decrypt(encryptedPassword, Shift);
                         
+                        //kung ang password kay nag matched pud pag decrypt
                         if(encryptPassword.equals(decryptedPass)){
                             passmatched = true;
                             break;
@@ -238,15 +270,19 @@ public class Login extends javax.swing.JFrame {
                     }
                 }
             
-            read.close();
+            read.close(); //muondang na siya ug basa
             
+            //kung wala nag exist ang username
             if(!usernameExist){
                 JOptionPane.showMessageDialog(this, "username not found", "loginFailed", JOptionPane.ERROR_MESSAGE);
-                jTextusername.setText("");//Mahawan ang username textfeild
-                jPassword.setText("");//Mahawan ang password feild
+                jTextusername.setText(""); //Mahawan ang username textfeild
+                jPassword.setText(""); //Mahawan ang password feild
+            
+            //kung wala nag matched ang password
             }else if(!passmatched){
                 JOptionPane.showMessageDialog(this, "Incorrect password", "Login Failed", JOptionPane.ERROR_MESSAGE);
-                jPassword.setText("");//Mahawan ang password feild
+                jPassword.setText(""); //Mahawan ang password feild
+            
             }else{
                 JOptionPane.showMessageDialog(this, "login Successful", "Welcome", JOptionPane.INFORMATION_MESSAGE);
                 //Mapadulong sa Dashboard nga Jframe
@@ -260,7 +296,7 @@ public class Login extends javax.swing.JFrame {
            }
         
     }//GEN-LAST:event_jButtonloginMouseClicked
-
+    //sa show password nga button
     private void jCheckshowpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckshowpassActionPerformed
         if (jCheckshowpass.isSelected()){
             jPassword.setEchoChar((char) 0); // ma visible ang password
@@ -277,11 +313,11 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordActionPerformed
     
-     
+     //decryption ni siya nga method
     private String decrypt(String message, int key) {
         char[] chars = message.toCharArray();
         for (int i = 0; i < chars.length; i++){
-            chars[i] -= key;
+            chars[i] -= key; //kung decrypt kay minus and equal
         }
         return new String(chars);   
     }

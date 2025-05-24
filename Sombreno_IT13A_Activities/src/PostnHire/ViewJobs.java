@@ -22,8 +22,9 @@ public class ViewJobs extends javax.swing.JInternalFrame {
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI User = (BasicInternalFrameUI)this.getUI();
         User.setNorthPane(null);
-        setSize(532, 500);
+       this.setSize(564, 500);
         loadjobs();
+        appliedjobs();
     }
 
    
@@ -32,76 +33,91 @@ public class ViewJobs extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPostJobs = new javax.swing.JLabel();
-        jScrollPane = new javax.swing.JScrollPane();
-        TjobArea = new javax.swing.JTextArea();
+        Pmain = new javax.swing.JPanel();
+        SPpostedjobs = new javax.swing.JScrollPane();
+        Tpostedjobs = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Tappliedarea = new javax.swing.JTextArea();
 
         setBorder(null);
 
-        jPanel1.setBackground(new java.awt.Color(203, 178, 107));
+        Pmain.setBackground(new java.awt.Color(203, 178, 107));
 
-        jPostJobs.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jPostJobs.setForeground(new java.awt.Color(59, 59, 156));
-        jPostJobs.setText("POSTED JOBS");
+        Tpostedjobs.setBackground(new java.awt.Color(153, 255, 255));
+        Tpostedjobs.setColumns(20);
+        Tpostedjobs.setRows(5);
+        SPpostedjobs.setViewportView(Tpostedjobs);
 
-        jScrollPane.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(59, 59, 156));
+        jLabel1.setText("Posted Jobs");
 
-        TjobArea.setBackground(new java.awt.Color(204, 204, 255));
-        TjobArea.setColumns(20);
-        TjobArea.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        TjobArea.setForeground(new java.awt.Color(0, 0, 0));
-        TjobArea.setRows(5);
-        jScrollPane.setViewportView(TjobArea);
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(59, 59, 156));
+        jLabel2.setText("Applied Jobs");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(132, 132, 132)
-                .addComponent(jPostJobs)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        Tappliedarea.setBackground(new java.awt.Color(153, 255, 255));
+        Tappliedarea.setColumns(20);
+        Tappliedarea.setRows(5);
+        jScrollPane1.setViewportView(Tappliedarea);
+
+        javax.swing.GroupLayout PmainLayout = new javax.swing.GroupLayout(Pmain);
+        Pmain.setLayout(PmainLayout);
+        PmainLayout.setHorizontalGroup(
+            PmainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PmainLayout.createSequentialGroup()
+                .addGap(192, 192, 192)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PmainLayout.createSequentialGroup()
+                .addContainerGap(48, Short.MAX_VALUE)
+                .addGroup(PmainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PmainLayout.createSequentialGroup()
+                        .addGroup(PmainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane1)
+                            .addComponent(SPpostedjobs, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE))
+                        .addGap(45, 45, 45))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PmainLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(187, 187, 187))))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jPostJobs)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+        PmainLayout.setVerticalGroup(
+            PmainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PmainLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(SPpostedjobs, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Pmain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Pmain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
     private void loadjobs(){
+        //gi call nato ang jobs.txt
         String path = "C:\\Users\\ADMIN\\Documents\\PostnHire\\jobs.txt";
-        File jobFiles = new File(path);
+        File jobFiles = new File(path);//gi named nato ang path to jobFiles
         
-        //show if the job didn't exist
-        if(!jobFiles.exists()){
-            JOptionPane.showMessageDialog(this, "No job posted yet");
-            return;       
-        }
         
+        //diari basahon ang jobfiles nga variable
         try(BufferedReader read = new BufferedReader(new FileReader(jobFiles))){
             StringBuilder content = new StringBuilder();
             String line;
@@ -109,16 +125,40 @@ public class ViewJobs extends javax.swing.JInternalFrame {
                 content.append(line).append("\n");
                
             }
-            TjobArea.setText(content.toString());
+            Tpostedjobs.setText(content.toString());//gi butang sa Tpostedjobs ang content
+            
         }catch (IOException e){
             JOptionPane.showMessageDialog(this, "Error Reading File");
         }
     }
 
+    private void appliedjobs(){
+        
+        //gi call nato ang application.txt
+        String path = "C:\\Users\\ADMIN\\Documents\\PostnHire\\Application.txt";
+        File docfiles = new File(path);
+        
+        
+        try(BufferedReader read = new BufferedReader(new FileReader(docfiles))){
+            StringBuilder content = new StringBuilder();
+            String line;
+            while((line = read.readLine()) != null){
+                content.append(line).append("\n");
+               
+            }
+            Tappliedarea.setText(content.toString());
+        }catch (IOException e){
+            JOptionPane.showMessageDialog(this, "Error Reading File");
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea TjobArea;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel jPostJobs;
-    private javax.swing.JScrollPane jScrollPane;
+    private javax.swing.JPanel Pmain;
+    private javax.swing.JScrollPane SPpostedjobs;
+    private javax.swing.JTextArea Tappliedarea;
+    private javax.swing.JTextArea Tpostedjobs;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

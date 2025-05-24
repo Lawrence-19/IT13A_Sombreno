@@ -22,11 +22,12 @@ static final int Shift = 3;
         jPanel1 = new javax.swing.JPanel();
         jPanelleft = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        Lcopyright = new javax.swing.JLabel();
         jPanelright = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jtextusername = new javax.swing.JTextField();
@@ -34,6 +35,7 @@ static final int Shift = 3;
         jButtonsignup = new javax.swing.JButton();
         jLabelnewpassword = new javax.swing.JLabel();
         jCheckshowpass = new javax.swing.JCheckBox();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,18 +50,14 @@ static final int Shift = 3;
         jLabel3.setText("Sign Up");
         jPanelleft.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 370, -1, -1));
 
-        jLabel5.setForeground(new java.awt.Color(153, 255, 255));
-        jLabel5.setText(" © 2025 POSTnHIRE - All Rights Reserved");
-        jPanelleft.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, -1));
-
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 255, 255));
-        jLabel4.setText("“Where Opportunities Meet Talent”");
-        jPanelleft.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, -1));
+        jLabel4.setText("\"Sign up today. Succeed tomorrow.\"");
+        jPanelleft.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 255, 255));
-        jLabel6.setText("“Post Jobs. Hire Talent. Fast.”");
+        jLabel6.setText("\"Don’t wait for opportunity,");
         jPanelleft.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(203, 178, 107));
@@ -85,13 +83,20 @@ static final int Shift = 3;
         jLabel2.setFocusTraversalPolicyProvider(true);
         jPanelleft.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
 
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\ADMIN\\Downloads\\POSTnHire logo.jpg")); // NOI18N
+        jPanelleft.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 230, 220));
+
+        Lcopyright.setForeground(new java.awt.Color(153, 255, 255));
+        Lcopyright.setText(" © 2025 POSTnHIRE - All Rights Reserved");
+        jPanelleft.add(Lcopyright, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
+
         jPanelright.setBackground(new java.awt.Color(203, 178, 107));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(59, 59, 156));
         jLabel1.setText("New Username");
 
-        jtextusername.setBackground(new java.awt.Color(255, 255, 255));
+        jtextusername.setBackground(new java.awt.Color(204, 255, 255));
         jtextusername.setForeground(new java.awt.Color(51, 51, 51));
         jtextusername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,7 +104,7 @@ static final int Shift = 3;
             }
         });
 
-        jnewPassword.setBackground(new java.awt.Color(255, 255, 255));
+        jnewPassword.setBackground(new java.awt.Color(204, 255, 255));
         jnewPassword.setForeground(new java.awt.Color(51, 51, 51));
 
         jButtonsignup.setBackground(new java.awt.Color(59, 59, 156));
@@ -126,6 +131,10 @@ static final int Shift = 3;
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(59, 59, 156));
+        jLabel8.setText("\"Welcome to PostnHire—where potential meets purpose\"");
+
         javax.swing.GroupLayout jPanelrightLayout = new javax.swing.GroupLayout(jPanelright);
         jPanelright.setLayout(jPanelrightLayout);
         jPanelrightLayout.setHorizontalGroup(
@@ -133,24 +142,32 @@ static final int Shift = 3;
             .addGroup(jPanelrightLayout.createSequentialGroup()
                 .addGroup(jPanelrightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelrightLayout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jButtonsignup, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelrightLayout.createSequentialGroup()
-                        .addGap(47, 47, 47)
+                        .addGap(106, 106, 106)
                         .addGroup(jPanelrightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jtextusername, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelnewpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanelrightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jCheckshowpass)
-                                .addGroup(jPanelrightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jtextusername, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
-                                    .addComponent(jnewPassword))))))
-                .addContainerGap(58, Short.MAX_VALUE))
+                            .addComponent(jnewPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelrightLayout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(jCheckshowpass)))
+                .addContainerGap(100, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelrightLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanelrightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelrightLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(84, 84, 84))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelrightLayout.createSequentialGroup()
+                        .addComponent(jButtonsignup, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(109, 109, 109))))
         );
         jPanelrightLayout.setVerticalGroup(
             jPanelrightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelrightLayout.createSequentialGroup()
-                .addGap(115, 115, 115)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel8)
+                .addGap(64, 64, 64)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtextusername, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -160,9 +177,9 @@ static final int Shift = 3;
                 .addComponent(jnewPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckshowpass)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
-                .addComponent(jButtonsignup)
-                .addGap(71, 71, 71))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addComponent(jButtonsignup, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -171,8 +188,8 @@ static final int Shift = 3;
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanelleft, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanelright, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addComponent(jPanelright, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,7 +221,7 @@ static final int Shift = 3;
         //if ever nga natuplok ni user ang button unya walay sulod ang username ug password//
         if (username.isEmpty() || newpassword.isEmpty()){
             JOptionPane.showMessageDialog(this, "Please input Your Username and Password", "Error", JOptionPane.ERROR_MESSAGE);
-        
+            return;
         }
         
         //Encryption gamit ang Caesar Cipher
@@ -245,7 +262,7 @@ static final int Shift = 3;
     private String encryptCaesar(String message, int key) {
         char[] chars = message.toCharArray();
         for (int i = 0; i < chars.length; i++){
-            chars[i] += key;
+            chars[i] += key;//kung encrypt plus and equal
         }
         return new String(chars);   
     }
@@ -286,14 +303,16 @@ static final int Shift = 3;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Lcopyright;
     private javax.swing.JButton jButtonsignup;
     private javax.swing.JCheckBox jCheckshowpass;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelnewpassword;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
